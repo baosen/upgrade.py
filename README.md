@@ -1,2 +1,2 @@
 # upgrade.py
-upgrade all packages in an arch linux system.
+Upgrades all packages in an Arch Linux system.
