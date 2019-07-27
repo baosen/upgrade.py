@@ -1,6 +1,7 @@
-#!/bin/python3
+#!/usr/bin/env python3
 import os
 import psutil
+import sys
 
 # Check if upgrade is running.
 def isrunning():
@@ -17,11 +18,11 @@ def islocked():
 
 # Check if upgrade is running.
 if isrunning():
-    exit("upgrade is currently running. Aborting...")
+    sys.exit("upgrade is currently running. Aborting...")
 
 # Check if lock is set in /var/lib/pacman/db.lck.
 if islocked():
-    exit("pacman is currently running. Aborting...")
+    sys.exit("pacman is currently running. Aborting...")
 
 # Upgrade system with the newest packages.
 os.system("yaourt -Syu --aur --noconfirm")
